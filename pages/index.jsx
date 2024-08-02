@@ -117,11 +117,11 @@ export default function Home() {
     localStorage.setItem("todoArray", JSON.stringify(array));
   };
  */
-
+  /*
   const loadData = () => {
     return JSON.parse(localStorage.getItem("todoArray"));
   };
-
+*/
   /*
   useEffect(() => {
     console.log("gnerating load data...");
@@ -136,16 +136,16 @@ export default function Home() {
   }, []);
 */
 
-  useEffect(() => {
+  /*useEffect(() => {
     const tmpData = loadData();
     if (tmpData != null) {
       setArray(() => {
         return tmpData;
       });
     }
-  }, []);
+  }, []);*/
 
-  /*useLoadData();*/
+  useLoadData(setArray);
   return (
     <div className={styles.container}>
       <Head>

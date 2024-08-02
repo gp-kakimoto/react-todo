@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-export const useLoadData = ({ setArray }) => {
+export const useLoadData = (setArray) => {
   const loadData = () => {
     return JSON.parse(localStorage.getItem("todoArray"));
   };
