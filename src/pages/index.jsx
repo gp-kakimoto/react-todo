@@ -1,17 +1,16 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
-import { useCallback, useEffect, useState } from "react";
+import { useState } from "react";
 
 import { useSaveData } from "../hooks/useSaveData";
 import { useLoadData } from "../hooks/useLoadData";
 import { useHandleArray } from "../hooks/useHnadleArray";
 import { useHandleText } from "../hooks/useHandleText";
-/*import { useLoadData } from "./hooks/useLoadData";*/
 
-import { Form } from "../components/Form";
-import { List } from "../components/List";
+import { Main } from "../components/Main";
 import { Footer } from "../components/Footer";
-export default function Home() {
+
+const Home = () => {
   const [text, setText] = useState("");
   const [array, setArray] = useState([]);
   const { handleChange, handleSubmit } = useHandleText(setText);
@@ -25,6 +24,7 @@ export default function Home() {
   useSaveData(array);
 
   useLoadData(setArray);
+
   return (
     <div className={styles.container}>
       <Head>
@@ -32,20 +32,17 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
-        <div className={styles.todoList}>
-          <h1>TODO</h1>
-          <Form
-            handleSubmit={handleSubmit}
-            handleChange={handleChange}
-            handleAdd={handleAdd}
-            handleDelete={handleDelete}
-          />
-          <List array={array} handleChecked={handleChecked} />
-        </div>
-      </main>
+      <Main
+        handleSubmit={handleSubmit}
+        handleChange={handleChange}
+        handleAdd={handleAdd}
+        handleDelete={handleDelete}
+        array={array}
+        handleChecked={handleChecked}
+      />
 
       <Footer />
     </div>
   );
-}
+};
+export default Home;
