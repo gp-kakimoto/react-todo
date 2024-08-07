@@ -23,8 +23,6 @@ export const useHandleArray = ({ array, setArray, text, setText }) => {
         return item.flag === true;
       });
     });
-
-    console.log(`after delte item .... array is ${array}`);
   }, []);
 
   const handleChecked = (e) => {
@@ -37,8 +35,6 @@ export const useHandleArray = ({ array, setArray, text, setText }) => {
           });
         });
       }
-      console.log(`item:flag=${item.flag}`);
-      console.log(`item.text=${item.text}`);
     });
   };
 
