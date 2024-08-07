@@ -1,0 +1,39 @@
+.form {
+  margin-left:0;
+  margin-right:0;
+  padding:0px;
+  /*padding-right:40px;*/
+  width:100%;
+  height:50px;
+  display:flex;
+}
+
+.form input[type=text]{
+  width:430px;
+  padding: 0.4rem;
+
+  border-color:#555555;
+  border-radius:0.5rem;
+
+  font-weight:bold;
+}
+
+
+.buttonIcon{
+  margin-left:3px;
+  margin-top:0px;
+  margin-bottom:0px;
+  padding:0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  aspect-ratio: 1;
+  background-color: #6fa24a;
+  border-radius: 50%;
+}
+
+.buttonIconDel{
+  background-color: chocolate;
+}
+
