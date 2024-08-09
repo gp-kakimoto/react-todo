@@ -60,13 +60,13 @@
 }
 
 .todo  {
-  border:2px solid #0070f3;
-  border-top:1px solid #0070f3;
-  border-bottom:1px solid #0070f3;
+  border:2px solid blanchedalmond;
+  border-top:1px solid blanchedalmond;
+  border-bottom:1px solid blanchedalmond;
 
   width:90%;
   height:auto;
-  background-color: cornflowerblue;
+  background-color: #E6F4DC;
 
   display:flex;
   align-items:center;
