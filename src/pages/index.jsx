@@ -2,10 +2,9 @@ import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import { useState } from "react";
 /** custom hooksのインポート */
-import { useSaveData } from "../hooks/useSaveData";
-import { useLoadData } from "../hooks/useLoadData";
-import { useHandleArray } from "../hooks/useHnadleArray";
-import { useHandleText } from "../hooks/useHandleText";
+import useLocalData from "../hooks/useLocalData";
+import useHandleArray from "../hooks/useHnadleArray";
+import useHandleText from "../hooks/useHandleText";
 /** コンポーネントのインポート */
 import { Main } from "../components/Main";
 import { Footer } from "../components/Footer";
@@ -21,8 +20,7 @@ const Home = () => {
     setText,
   });
 
-  useSaveData(array);
-  useLoadData(setArray);
+  useLocalData({ array, setArray });
 
   return (
     <div className={styles.container}>

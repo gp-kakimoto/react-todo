@@ -1,6 +1,6 @@
 import { useCallback } from "react";
 
-export const useHandleArray = ({ array, setArray, text, setText }) => {
+const useHandleArray = ({ array, setArray, text, setText }) => {
   const handleAdd = useCallback(() => {
     setArray((prevArray) => {
       if (prevArray.some((item) => item.text === text)) {
@@ -40,3 +40,4 @@ export const useHandleArray = ({ array, setArray, text, setText }) => {
 
   return { handleAdd, handleDelete, handleChecked };
 };
+export default useHandleArray;

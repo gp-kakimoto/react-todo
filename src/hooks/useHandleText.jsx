@@ -1,6 +1,6 @@
 import { useCallback } from "react";
 
-export const useHandleText = (setText) => {
+const useHandleText = (setText) => {
   const handleChange = useCallback((e) => {
     if (e.target.value.length > 100) {
       alert("100文字以内にしてください");
@@ -15,3 +15,5 @@ export const useHandleText = (setText) => {
 
   return { handleChange, handleSubmit };
 };
+
+export default useHandleText;

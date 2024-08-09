@@ -1,12 +1,17 @@
 import styles from "./Form.module.css";
 
 export const Form = (props) => {
+  const inputProp = {
+    type: "text",
+    placeholder: "TODOを入力",
+    autoComplete: "off",
+  };
   return (
     <form className={styles.form} onSubmit={props.handleSubmit}>
       <input
-        type="text"
-        placeholder="TODOを入力"
-        autoComplete="off"
+        type={inputProp.type}
+        placeholder={inputProp.placeholder}
+        autoComplete={inputProp.autoComplete}
         onChange={props.handleChange}
       />
       <button
