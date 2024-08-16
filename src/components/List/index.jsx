@@ -1,6 +1,19 @@
 import styles from "./List.module.css";
 
 export const List = (props) => {
+  const handleChecked = (e) => {
+    props.array.map((item) => {
+      if (item.text === e.target.value) {
+        props.setArray(() => {
+          return props.array.toSpliced(props.array.indexOf(item), 1, {
+            text: item.text,
+            flag: !item.flag,
+          });
+        });
+      }
+    });
+  };
+
   return (
     <ul className={styles.todoListStyle}>
       {props.array.map((item) => {
@@ -13,7 +26,7 @@ export const List = (props) => {
               type="checkbox"
               value={item.text}
               id={item.text}
-              onChange={props.handleChecked}
+              onChange={handleChecked}
               checked={!item.flag}
             />
             <label htmlFor={item.text}></label>
